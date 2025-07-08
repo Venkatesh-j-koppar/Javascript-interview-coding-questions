@@ -55,6 +55,16 @@ function removeRepetingElements(str){
             uniqueArray.push(stringArray[i])
         }
     }
-    return uniqueArray
+    return uniqueArray.join('')
 }
 console.log(removeRepetingElements('Venkateshh'))
+output: Vnkats
+
+// 4. unique array
+function findUnique(arr){
+    const s1 = new Set(arr)
+    return [...s1]
+}
+console.log(findUnique([1,2,2,3,45,5,6,6]))
+
+output: [ 1, 2, 3, 45, 5, 6 ]
