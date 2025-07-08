@@ -68,3 +68,17 @@ function findUnique(arr){
 console.log(findUnique([1,2,2,3,45,5,6,6]))
 
 output: [ 1, 2, 3, 45, 5, 6 ]
+
+// 5 flattenArray
+function flattenArray(arr,resultantArray = []){
+    for(let i=0;i<arr.length;i++){
+        if(Array.isArray(arr[i])){
+            flattenArray(arr[i],resultantArray)
+        }else{
+            resultantArray.push(arr[i])
+        }
+    }
+    return resultantArray
+}
+console.log(flattenArray([1, [2, 3], [4, 5],[6,[6]]]))
+output: [1, 2, 3, 4, 5, 6, 6]
