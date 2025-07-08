@@ -1,4 +1,4 @@
-1. Count how many times each value appears
+// 1. Count how many times each value appears
 
 function countValues(arr, num){
     const resultantObject = {}
@@ -23,7 +23,7 @@ output:
 { apple: 2, banana: 2, orange: 1 }
 
 
-2. Find Second Largest Element
+// 2. Find Second Largest Element
 
 const arr = [1,2,2,2,34,2,5,6,9,10]
 
@@ -42,3 +42,19 @@ function findSecondLargest(arr){
 
 console.log(findSecondLargest(arr))
 output- 10 
+
+// 3. Remove repeating elements from an array
+function removeRepetingElements(str){
+    const stringArray = str.split('')
+    const uniqueArray = []
+    for(let i=0;i<stringArray.length;i++){
+        if(uniqueArray.includes(stringArray[i])){
+            const itemIndex = uniqueArray.indexOf(stringArray[i])
+            uniqueArray.splice(itemIndex,1)
+        }else{
+            uniqueArray.push(stringArray[i])
+        }
+    }
+    return uniqueArray
+}
+console.log(removeRepetingElements('Venkateshh'))
