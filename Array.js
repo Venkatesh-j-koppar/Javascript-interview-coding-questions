@@ -82,3 +82,30 @@ function flattenArray(arr,resultantArray = []){
 }
 console.log(flattenArray([1, [2, 3], [4, 5],[6,[6]]]))
 output: [1, 2, 3, 4, 5, 6, 6]
+
+// 6 GroupByArray
+function groupBy(arr,key){
+    const resultantObject = {}
+    for(let i=0;i<arr.length;i++){
+        const obj = arr[i]
+        const value = obj[key]
+        if(resultantObject[value]){
+            resultantObject[value].push(obj)
+        }else{
+            resultantObject[value] = [obj]
+        }
+    }
+    return resultantObject
+}
+console.log(groupBy([
+    { name: 'Alice', age: 25 },
+    { name: 'Bob', age: 30 },
+    { name: 'Charlie', age: 25 }
+],'age'))
+
+// output
+// {
+//   '25': [ { name: 'Alice', age: 25 }, { name: 'Charlie', age: 25 } ],
+//   '30': [ { name: 'Bob', age: 30 } ]
+// }
+
