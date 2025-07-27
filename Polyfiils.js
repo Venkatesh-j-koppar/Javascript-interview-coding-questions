@@ -1,8 +1,6 @@
 // Polyfills 
 
 // Map
-
-
 Array.prototype.myMap = function (callback,thisArgs) {
     let result = []
     for(let i=0;i<this.length;i++){
