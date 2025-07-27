@@ -16,5 +16,8 @@ const obj1 = {
 }
 
 // Note make sure u pass a normal function as a callback when u pass thisArgs as callback functions doesnot have this parameter in it.
-console.log(arr1.myMap((function(item){return item*this.radius}),obj1))
-console.log(arr1.myMap(((item) => item*2)))
+console.log(arr1.myMap((function(item){return item*this.radius}),obj1)) // [ 5, 10, 15, 20, 25 ]
+console.log(arr1.myMap(((item) => item*2))) // [ 2, 4, 6, 8, 10 ]
+
+
+
