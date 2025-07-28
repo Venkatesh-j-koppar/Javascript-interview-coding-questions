@@ -50,5 +50,37 @@ console.log(arr.myfilter(function(item){return item%this.multiplier==0},obj1))
 
 // output [ 3, 6, 9 ]
 
+const numbers = [10, 20, 30];
+
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+console.log(sum); // 60
+
+Array.prototype.myReduce = function(callback, initialValue) {
+    if (typeof callback !== 'function') {
+        throw new TypeError(callback + ' is not a function');
+    }
+
+    const array = this;
+    let acc;
+    let startIndex;
+
+    if (initialValue !== undefined) {
+        acc = initialValue;
+        startIndex = 0;
+    } else {
+        if (array.length === 0) {
+            throw new TypeError('Reduce of empty array with no initial value');
+        }
+        acc = array[0];
+        startIndex = 1;
+    }
+
+    for (let i = startIndex; i < array.length; i++) {
+        acc = callback(acc, array[i], i, array);
+    }
+
+    return acc;
+};
+
 
 
