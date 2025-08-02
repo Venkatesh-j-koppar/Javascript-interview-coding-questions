@@ -31,3 +31,13 @@ Function.prototype.myBind = function (thisArgs, ...params) {
     return fn.apply(thisArgs, [...params, ...args]);
   };
 };
+
+// Polyfill for Call
+Function.prototype.myCall = function(thisArgs,...args){
+    const fn = this
+    if(thisArgs === undefined || thisArgs === null){
+        throw new Error('Please pass object')
+    }
+    thisArgs.tempfunc = fn
+    return result = thisArgs.tempfunc(...args)
+}
